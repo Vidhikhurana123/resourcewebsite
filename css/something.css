@@ -1,0 +1,282 @@
+*{scroll-behavior: smooth;}
+
+.relative { 
+     position: relative;
+    border: 3px solid lightseagreen;
+} 
+.absolute {
+position: absolute ;
+right: 0;
+border: 3px solid red;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family:"franklin-gothic-extra-compre", sans-serif;;
+    font-size: 1.87rem;
+    font-weight: 600;
+    font-style: normal;
+}
+
+body { 
+color: #2C3D73;
+position: relative;
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(179,207,140,1) 50%);
+background-image: url('../images/component_25.png');
+background-size: cover; 
+background-position: left; 
+background-repeat: no-repeat; 
+height: 100vh; 
+margin: 0; 
+}
+
+button {
+font-family:"franklin-gothic-extra-compre", sans-serif;;
+font-size: 1.125rem;
+font-weight: 600;			
+font-style: normal;
+background-color: transparent;
+color: #FFD372;
+text-decoration: none;
+text-shadow: 
+1px 1px 0px hsl(8, 86%, 60%), 
+-1px -1px 0px #F15842, 
+1px -1px 0px #F15842, 
+-1px 1px 0px #F15842; 
+width: 130px;  /* Controls ellipse width */
+height: 35px;  /* Controls ellipse height */
+border: 2px solid #F15842; /* Stroke thickness */
+border-radius: 50%; /* Ensures ellipse shape */
+}
+
+button:hover {
+background-color: #F15842;
+color: #FFD372;
+text-decoration: none;
+text-shadow: 
+1px 1px 0px hsl(8, 86%, 60%), 
+-1px -1px 0px #F15842, 
+1px -1px 0px #F15842, 
+-1px 1px 0px #F15842; 
+width: 130px;  /* Controls ellipse width */
+height: 35px;  /* Controls ellipse height */
+border: 2px solid #F15842; /* Stroke thickness */
+border-radius: 50%; /* Ensures ellipse shape */
+}
+
+/*typography*/
+@media (max-width: 600px) {
+    h2 {font-family: "franklin-gothic-compressed", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+        width: 50%;
+}
+
+    p {font-family: "franklin-gothic-compressed", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.65rem;
+        width: 40%;
+    }
+}
+
+@media (min-width:601px) {
+    h2 {font-family: "franklin-gothic-compressed", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.4rem;
+        width: 30%;
+}
+
+    p {font-family: "franklin-gothic-compressed", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.85rem;
+        width: 40%;
+    }
+
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 2rem;
+        font-family:"instrument-serif", sans-serif;
+        font-weight: lighter;
+        color: #F15842;	
+    }
+}
+
+@media (min-width:401px) {
+    h1 {
+        font-size: 4.62rem;
+        font-family:"instrument-serif", sans-serif;
+        font-weight: lighter;
+        color: #F15842;
+        line-height: 4.62rem;
+    }
+}
+
+h1, h2, button {
+    margin: 7% ; /* Apply the same margin */
+    padding: 0; /* Reset padding */
+    }
+    
+.background-image {
+    width: 70%;
+    height: auto;
+}
+
+/* Navigation Styles */
+ul.topnav {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #B3CF8C;
+display: flex;
+justify-content: space-between;
+border-bottom: 1px solid #FFD372;
+}
+
+/* Logo container */
+.logo {
+    min-width: 100px;
+    width: 10vw;
+    height: auto;
+}
+
+/* Navigation items container */
+ul.topnav li.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 30px;
+}
+
+ul.topnav li a {
+    display: block;
+    color: #FFD372;
+    text-align: left;
+    padding: 17px 30px;
+    text-decoration: none;
+    position: relative;
+    font-family: "franklin-gothic-extra-compre", sans-serif;
+    font-size: 1.87rem;
+    font-weight: 600;
+    text-shadow: 
+        2px 2px 0px hsl(8, 86%, 60%),
+        -2px -2px 0px #F15842,
+        2px -2px 0px #F15842,
+        -2px 2px 0px #F15842;
+}
+
+/* Hover effect for navigation links */
+ul.topnav li a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    height: 35px;
+    border: 2px solid #F15842;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+ul.topnav li a:hover::after {
+    opacity: 1;
+}
+
+ul.topnav li a.no-outline::after {
+    display: none;
+}
+
+/* Responsive Navigation */
+@media screen and (max-width: 600px) {
+    ul.topnav {
+        padding: 10px;
+    }
+
+    ul.topnav li.right {
+        gap: 10px;
+        padding-right: 10px;
+    }
+
+    ul.topnav li a {
+        font-size: calc(1.87rem * 0.6); /* 60% of original size */
+        padding: 10px 15px;
+    }
+
+    ul.topnav li a::after {
+        width: 54px; /* 60% of original 90px */
+        height: 21px; /* 60% of original 35px */
+    }
+}
+
+/* Remove float styles as we're using flexbox */
+ul.topnav li {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:600px) {
+    section {
+        margin-bottom: 30%;
+    }
+}
+
+footer {
+background-color: #F4C75B; /* Yellow background */
+color: #2C3D73; /* Dark text for contrast */
+font-family: "franklin-gothic-extra-compre", sans-serif;
+font-size: 2em;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    width: 90%; /* Adjust this based on your layout */
+    margin: 0 auto; /* Centers the footer content */
+    position: relative; /* Allows positioning of child elements relative to the parent */
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    white-space: nowrap;
+    position: relative; /* Use relative positioning to adjust based on container */
+}
+
+/* Adjustments for better mobile responsiveness */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 5px;
+        width: 90%; /* Adjust this based on your layout */
+        margin: 0 auto; /* Centers the footer content */
+        position: relative; /* Allows positioning of child elements relative to the parent */
+    }
+    
+    .footer-left, .footer-center, .footer-right {
+         white-space: nowrap;
+        position: relative;
+    }
+
+.footer-links a {
+text-decoration: none;
+margin-left: 10px;
+}
+
+.footer-links a:hover {
+text-decoration: underline;
+}
+}
