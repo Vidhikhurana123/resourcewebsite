@@ -61,34 +61,49 @@
             <h4><strong>* Not sure where to find it?</strong><br>
             Check out the <a href="resources.html">resources page</a> for an interactive map of Toronto's stationery shops. Filtering options available based on affordability, sustainability and locally produced items!</h4>
             </div>
-          </section>
         
+          <div class="section">
+            <div class="timer">
+              <label for="timerSelect"><strong>Timer:</strong></label>
+              <select id="timerSelect">
+                <option value="3600">Emulsion Drying Time</option>
+                <option value="90">Exposing Time</option>
+                <option value="900">Drying Time</option>
+              </select>
+              <p id="display">00:00:00</p>
+              <button onclick="startTimer()">Start</button>
+              <button onclick="pauseTimer()">Pause</button>
+              <button onclick="resetTimer()">Reset</button>
+            </div>
+          </div>
+
+        </section>
+
           <div class="step-section">
             *To reveal the process- <br>
             Click and drag cursor across screen-printable layers. It's simple!
           </div>
-        
-          <div class="section">
-            <div class="timer">
-              <p>Timer</p>
-              <p>00:48:09</p>
-              <p>&#9654; ||</p>
-            </div>
         
             <img src="your-layered-image-url-here" alt="Layered Screens" width="200">
           </div>
         
           <div class="steps-container">
             <div class="step">
-              <h3>Step 1- Screen Selection and Coating</h3>
-              <p>After the design file is prepared, the next step is selecting the appropriate screen mesh based on the detail and type of print. A higher mesh count is used for fine details, while a lower mesh is suitable for bold, heavy prints. The screen is then coated with a light-sensitive emulsion. This emulsion needs to be applied evenly in a dark or low-light environment to avoid premature exposure. Once coated, the screen is left to dry in a light-safe area, usually in a horizontal position.
-
-              </p>
+              <img src="placeholder-image.jpg" alt="Step visual">
             </div>
             <div class="step">
-              <h3>Step 2- Image Exposure</h3>
-              <p>LOnce the emulsion-coated screen is dry, the design is printed onto a transparent film (called a film positive) and placed over the screen. The screen and film are then exposed to a strong light source in an exposure unit. The light hardens the emulsion where it isn’t blocked by the design. The areas covered by the design remain soft, creating a stencil. Timing during this step is crucial—overexposure or underexposure can ruin the stencil.</p>
+              <h3>Step 1- Screen Selection and Coating</h3>
+              <p>After the design file is prepared, the next step is selecting the appropriate screen mesh based on the detail and type of print. A higher mesh count is used for fine details, while a lower mesh is suitable for bold, heavy prints. The screen is then coated with a light-sensitive emulsion. This emulsion needs to be applied evenly in a dark or low-light environment to avoid premature exposure. Once coated, the screen is left to dry in a light-safe area, usually in a horizontal position.</p>
             </div>
+        
+            <div class="step">
+              <h3>Step 2- Image Exposure</h3>
+              <p>Once the emulsion-coated screen is dry, the design is printed onto a transparent film (called a film positive) and placed over the screen. The screen and film are then exposed to a strong light source in an exposure unit. The light hardens the emulsion where it isn’t blocked by the design. The areas covered by the design remain soft, creating a stencil. Timing during this step is crucial—overexposure or underexposure can ruin the stencil.</p>
+            </div>
+            <div class="step">
+              <img src="placeholder-image.jpg" alt="Step visual">
+            </div>
+
             <div class="step">
               <img src="placeholder-image.jpg" alt="Step visual">
             </div>
@@ -96,10 +111,52 @@
               <h3>Step 3- Washing out the stencil</h3>
               <p>After exposure, the screen is rinsed with water, typically using a pressure washer or spray hose. The water washes away the unexposed, soft emulsion where the design was, while the hardened emulsion remains. This creates the open areas of the stencil through which ink will pass during printing. Once the image is fully washed out and clear, the screen is left to dry thoroughly before printing begins.</p>
             </div>
-            <div class="step">
-              <img src="placeholder-image.jpg" alt="Step visual">
-            </div>
+            
           </div>
+          <script>
+            let countdown;
+            let remainingTime = 0;
+            let isPaused = false;
+          
+            function formatTime(seconds) {
+              const hrs = Math.floor(seconds / 3600);
+              const mins = Math.floor((seconds % 3600) / 60);
+              const secs = seconds % 60;
+              return `${hrs.toString().padStart(2, '0')}:${mins
+                .toString()
+                .padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+          
+            function startTimer() {
+              const select = document.getElementById('timerSelect');
+              if (!isPaused) {
+                remainingTime = parseInt(select.value);
+              }
+              clearInterval(countdown);
+              countdown = setInterval(() => {
+                if (remainingTime <= 0) {
+                  clearInterval(countdown);
+                  alert('Time\'s up!');
+                } else {
+                  document.getElementById('display').textContent = formatTime(remainingTime);
+                  remainingTime--;
+                }
+              }, 1000);
+              isPaused = false;
+            }
+          
+            function pauseTimer() {
+              clearInterval(countdown);
+              isPaused = true;
+            }
+          
+            function resetTimer() {
+              clearInterval(countdown);
+              remainingTime = 0;
+              document.getElementById('display').textContent = '00:00:00';
+              isPaused = false;
+            }
+          </script>
         </body>
         </html>
         

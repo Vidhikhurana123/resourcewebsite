@@ -14,16 +14,6 @@ img {
     height: auto;
 } 
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    font-family:"franklin-gothic-extra-compre", sans-serif;;
-    font-size: 1.87rem;
-    font-weight: 600;
-    font-style: normal;
-}
-
 body { 
 color: #2C3D73;
 position: relative;
@@ -124,10 +114,17 @@ p {
     height: auto;
 }
 
-ul.topnav {
+ul {
+    font-family:"franklin-gothic-extra-compre", sans-serif;;
+    font-size: 1.87rem;
+    font-weight: 600;
+    font-style: normal;
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+ul.topnav {
     overflow: hidden;
     background-color: #B3CF8C;
     display: flex;

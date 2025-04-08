@@ -5,6 +5,16 @@ img {
     height: auto;
 } 
 
+ul {
+    font-family:"franklin-gothic-extra-compre", sans-serif;;
+    font-size: 1.87rem;
+    font-weight: 600;
+    font-style: normal;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 ul.topnav {
     list-style-type: none;
     margin: 0;
@@ -228,9 +238,9 @@ body {
   justify-content: space-around;
 }
 
-.materials, .file-prep {
-  flex: 1 1 40%;
-}
+.section {
+    flex: 2 1 1;
+  }
 
 .materials {
   background: #fce6b0;
@@ -248,10 +258,20 @@ body {
 .timer {
   background: #fdd97f;
   padding: 1em;
-  width: 120px;
   text-align: center;
   border-radius: 10px;
 }
+.timer select{
+  margin-top: 10px;
+  margin-right: 5px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff3d4;
+  cursor: pointer;
+}
+
 
 .step {
 background-color: #FDF7E8;
