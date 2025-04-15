@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Screenprinting</title>
+	<link rel="stylesheet" href="css/resources.css">
+	<link rel="stylesheet" href="https://use.typekit.net/ezf5eml.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    </head>
+    <body>
+        <ul class="topnav">
+			<li>
+				<a class="no-outline" href="index.html">
+					<img src="images/Component 23.png" alt="Screenprinting from Scratch" class="logo">
+				</a>
+			</li>
+			<li class="right">
+				<a href="about.html">About</a>
+				<a href="instructions.html">Instructions</a>
+				<a href="resources.html">Resources</a>
+			</li>
+		</ul>
+
+        <div id="map"></div>
+
+        <footer>
+          <div class="footer-content">
+            <div class="footer-left">
+              <p>Learn, Print, Create.</p>
+            </div>
+            <div class="footer-center">
+              <p><strong>Designer:</strong> Vidhi Khurana</p>
+              <p><strong>Contact:</strong> vidhikhurana18@gmail.com</p>
+              <p>OCAD University</p>
+            </div>
+            <div class="footer-right">
+              <p>© 2025 Screenprinting from Scratch. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </body>
+    <!-- interactive map code from leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin="">
+
+    </script>
+    <script>
+    var map = L.map('map').setView([43.651070, -79.385015], 13);
+  
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    </script>
+    </html>

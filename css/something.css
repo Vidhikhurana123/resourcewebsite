@@ -143,6 +143,10 @@ border-bottom: 1px solid #FFD372;
     height: auto;
 }
 
+.logo:hover {
+    transform: scale(1.1);
+}
+
 /* Navigation items container */
 ul.topnav li.right {
     display: flex;

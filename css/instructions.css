@@ -10,7 +10,6 @@ ul {
     font-size: 1.87rem;
     font-weight: 600;
     font-style: normal;
-    list-style-type: none;
     margin: 0;
     padding: 0;
 }
@@ -33,6 +32,10 @@ ul.topnav {
         height: auto;
     }
     
+    .logo:hover {
+        transform: scale(1.1);
+    }
+
     /* Navigation items container */
     ul.topnav li.right {
         display: flex;
@@ -231,35 +234,57 @@ body {
     }
 
 .section {
-  padding: 2em;
+  padding: 1em;
   display: flex;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 0.5em;
   justify-content: space-around;
 }
 
-.section {
-    flex: 2 1 1;
+  .file-prep {
+    width: 50%;
+    padding: 1em;
+    border-radius: 10px;
+    margin-top: 0%;
+  }
+  
+  .materials {
+    width: 25%;
+    background: #FFD372;
+    padding: 1em;
+    border-radius: 10px;
+    margin-top: 0%;
   }
 
-.materials {
-  background: #fce6b0;
-  padding: 1em;
-  border-radius: 10px;
+
+  
+  @media (max-width:800px) {
+    .materials {
+        column-count: 1;
+    }
 }
+
+@media (min-width:801px) {
+    .materials {
+        column-count: 2;
+        height: 40%;
+    }
+}
+
+  .timer {
+    margin-top: 0%;
+    width: 180px;
+    height: 350px;
+    background: #FFD372;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: center;
+  }
 
 .step-section {
   background: linear-gradient(to right, #e06648, #fddbb7);
-  padding: 1em;
+  padding: .071em;
   text-align: center;
-  font-weight: bold;
-}
-
-.timer {
-  background: #fdd97f;
-  padding: 1em;
-  text-align: center;
-  border-radius: 10px;
 }
 .timer select{
   margin-top: 10px;
@@ -268,13 +293,15 @@ body {
   font-size: 14px;
   border: none;
   border-radius: 5px;
-  background-color: #fff3d4;
+  background-color: #FDF7E8;
   cursor: pointer;
 }
 
+li{
+margin-left: 5%;
+}
 
 .step {
-background-color: #FDF7E8;
 border: 2px solid #F15842;
 box-shadow: 10px 10px 4px rgba(0,0,0,0.05);
 padding: 1em;
@@ -293,3 +320,55 @@ margin: 1em;
   flex-wrap: wrap;
   justify-content: center;
 }
+
+footer {
+    background-color: #F4C75B; /* Yellow background */
+    color: #2C3D73; /* Dark text for contrast */
+    font-family: "franklin-gothic-extra-compre", sans-serif;
+    font-size: 2em;
+    }
+    
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 5px;
+        width: 90%; /* Adjust this based on your layout */
+        margin: 0 auto; /* Centers the footer content */
+        position: relative; /* Allows positioning of child elements relative to the parent */
+    }
+    
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        white-space: nowrap;
+        position: relative; /* Use relative positioning to adjust based on container */
+    }
+    
+    /* Adjustments for better mobile responsiveness */
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column; /* Stack items vertically on smaller screens */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 5px;
+            width: 90%; /* Adjust this based on your layout */
+            margin: 0 auto; /* Centers the footer content */
+            position: relative; /* Allows positioning of child elements relative to the parent */
+        }
+        
+        .footer-left, .footer-center, .footer-right {
+             white-space: nowrap;
+            position: relative;
+        }
+    
+    .footer-links a {
+    text-decoration: none;
+    margin-left: 10px;
+    }
+    
+    .footer-links a:hover {
+    text-decoration: underline;
+    }
+    }
